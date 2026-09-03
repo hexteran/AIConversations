@@ -1,427 +1,426 @@
-# Personal Metabolism and Cognitive Energy Experiment
+# Passive Personal Metabolism and Cognitive Energy Observation
 
 ## Objective
 
-This 30-day N-of-1 experiment is designed to identify which measurable physiological and behavioral variables are associated with changes in subjective energy, concentration, sleepiness, hunger, mood, and objective cognitive performance.
+The goal of this 30-day N-of-1 study is to understand **how I normally feel and function in everyday life** and how those changes relate to glucose, sleep, physical activity, training, heart rate, meals, caffeine, and other naturally occurring factors.
 
-The study treats glucose as one possible explanatory variable rather than assuming that glucose fluctuations directly determine cognitive energy. It combines continuous glucose monitoring with sleep, training load, heart-rate and HRV, hydration, food intake, caffeine, and repeated cognitive testing.
+This is an **observational study, not an intervention study**. I should not deliberately change my diet, meal order, walking habits, caffeine intake, sleep schedule, training schedule, hydration, or other routines for the purpose of the study.
 
-A second objective is to move beyond passive correlation. After an initial observation phase, the protocol introduces repeated controlled interventions so that potentially causal effects can be tested within the same individual.
+The useful question is:
 
-## Core model
+> When I live normally, which naturally occurring physiological and behavioral patterns are associated with feeling energetic, focused, sleepy, hungry, stressed, mentally tired, or physically tired?
 
-The experiment follows this causal structure:
+Glucose is treated as one possible explanatory variable rather than as the assumed cause of changes in energy or cognition.
 
-> context and behavior → physiological response → cognitive / subjective outcome
+## Main design principle: minimum overhead
 
-Examples:
+The study is only useful if logging does not itself substantially change normal behavior. Therefore:
 
-- meal composition → glucose response → later sleepiness or concentration
-- training load → recovery and sleep → next-day cognitive performance
-- dehydration → post-training fatigue → cognitive-test performance
-- poor sleep → altered glucose response + lower energy
+1. Prefer measurements collected automatically by devices and apps.
+2. Keep manual check-ins short enough to complete in a few taps.
+3. Do not weigh food or calculate macronutrients unless that is already part of normal routine.
+4. Do not perform pre/post-training weighing or special hydration measurements.
+5. Do not add special walks, standardized meals, fasting periods, or training sessions.
+6. Prefer fewer consistently recorded variables over many inconsistently recorded variables.
 
-Because these variables influence one another, the experiment records major confounders instead of interpreting any single correlation in isolation.
+## Duration
 
-## Duration and phases
+Observe normal life for approximately **30 days**.
 
-### Days 1–10: Observation
+The same protocol is used throughout the period. There are no experimental phases and no prescribed interventions.
 
-Live normally. Do not deliberately change diet, exercise, caffeine, or sleep habits.
+The first 3–5 days can be treated as a familiarization period for the apps and optional cognitive test, but normal habits should remain unchanged.
 
-The purpose is to establish natural variation and learn the data-collection routine.
+## Recommended low-overhead app setup on Android
 
-### Days 11–18: Post-meal walking experiment
+### 1. Google Health Connect — automatic data hub
 
-Choose one standardized lunch and repeat it across eight test days.
+Use **Health Connect** as the background aggregation layer whenever the wearable and other apps support it.
 
-Randomize between:
+Health Connect can store many useful categories, including activity, exercise, sleep, heart rate, resting heart rate, HRV, weight, nutrition, hydration, and blood glucose. Whether a particular metric appears there depends on whether the source app actually writes that data to Health Connect.
 
-- **Control:** eat the meal and do not exercise immediately afterward.
-- **Intervention:** eat the same meal and take a 15-minute walk immediately afterward.
+Official documentation:
+https://developer.android.com/health-and-fitness/health-connect/data-types
 
-Avoid doing all control days first and all intervention days second. Alternate or randomize conditions.
+The intention is that data such as steps, workouts, sleep, heart rate, and HRV should be collected automatically rather than entered manually.
 
-When practical, record subjective and cognitive outcomes before the meal and at approximately +30, +60, +90, +120, and +180 minutes.
+### 2. Bearable — primary subjective journal
 
-### Days 19–26: Meal-order experiment
+**Bearable** is a good candidate for the main manual journal because it is designed for quick repeated tracking of energy, mood, symptoms, lifestyle factors, and custom ratings. On Android it can read supported data from Health Connect.
 
-Use another standardized meal.
+Useful things to configure in Bearable:
 
-Randomize between:
+- Energy
+- Focus / concentration as a custom rating
+- Sleepiness or mental fatigue
+- Stress
+- Mood
+- Hunger, if useful
+- Training as a Factor
+- Coffee / caffeine as a Factor
+- Alcohol as a Factor, when applicable
+- unusually large or unusual meals as optional Factors
 
-- carbohydrate first, then protein / vegetables
-- protein / vegetables first, then carbohydrate
+Bearable supports multiple energy entries during a day and allows their times to be adjusted. Its Factors and custom ratings can also be used to record events and states without writing journal text.
 
-Keep ingredients, portion size, meal time, caffeine, and post-meal activity as similar as reasonably possible.
+Official information:
+https://bearable.app/
+https://bearable.app/support/howto/sync-with-google-health-connect-apple-health/
 
-### Days 27–30: Replication
+Bearable can export tracked data later for analysis.
 
-Choose the strongest apparent effect from the preceding phases and repeat the comparison.
+### 3. CGM manufacturer app — glucose source
 
-The purpose is to determine whether the effect reproduces instead of relying on a single unusually good or bad day.
+Use the normal application supplied by the CGM manufacturer for continuous glucose measurement.
 
-## Core measurements
+There is no need to manually copy individual glucose readings into the journal. Export the CGM data after the observation period and align it with the other data by timestamp.
 
-Record:
+If the CGM app happens to write glucose into Health Connect, that can simplify aggregation, but this should not be assumed in advance.
 
-- continuous glucose using a CGM
-- heart rate and HRV
-- steps and activity
-- sleep timing and duration
-- meal timestamps and approximate macronutrients
-- caffeine timing and dose
-- morning body weight
-- subjective energy, concentration, sleepiness, hunger, mood, stress, and motivation using stable 0–10 scales
+### 4. Wearable app — passive physiology
 
-For meals, derive:
+Keep using the wearable's normal application. Prefer automatic collection of:
 
-- pre-meal glucose
-- post-meal peak
-- change from baseline
-- time to peak
-- glucose at +60, +120, and +180 minutes
-- incremental area under the curve (iAUC)
-- approximate return-to-baseline time
+- steps
+- workouts
+- heart rate
+- resting heart rate
+- HRV
+- sleep start / end
+- sleep duration
 
-For whole days, derive:
+If possible, let the wearable app synchronize these measurements to Health Connect and let Bearable read the supported subset.
 
-- mean glucose
-- standard deviation
-- coefficient of variation
-- minimum and maximum
-- overnight mean
-- overnight variability
+## Minimal manual protocol
 
-CGM values represent interstitial glucose rather than direct blood glucose, so small timing differences should not be overinterpreted.
+### Regular check-ins
 
-## Subjective state
+Do only **three short subjective check-ins per day**:
 
-Use fixed measurement times rather than recording only when feeling unusually good or bad.
+- morning
+- middle of the day
+- evening
 
-Suggested checkpoints:
+Exact clock times are less important than consistency. If the schedule varies, preserve the actual timestamp rather than forcing an artificial measurement time.
 
-- after waking
-- 10:00
-- 13:00
-- 16:00
-- 19:00
-- before bed
+Each check-in should take roughly 10–20 seconds.
 
-Rate each from 0–10:
+Record only:
 
-- mental energy
-- concentration
-- sleepiness
-- hunger
-- mood
-- stress
-- motivation to work
+- **Energy**: 1–5
+- **Focus / concentration**: 1–5
+- **Sleepiness / mental fatigue**: 1–5
+- **Stress**: 1–5
 
-Keep the meaning of each scale stable throughout the experiment.
+Optional if they are useful and still low-overhead:
 
-## Cognitive-performance battery
+- hunger: 1–5
+- mood: 1–5
 
-Use the same device, test implementation, input method, and environment whenever possible.
+Using a 1–5 scale fits Bearable's existing energy workflow and reduces friction compared with entering precise 0–10 numbers.
 
-Practice the tests for 3–5 days before treating results as experimental data to reduce learning effects.
+### Event logging
 
-### Primary test: 3-minute Psychomotor Vigilance Test (PVT)
+Log only events whose timestamps are useful for later interpretation.
 
-Record:
+The minimum useful event set is:
 
-- median reaction time
-- 90th-percentile reaction time
-- reaction-time variability
-- number of lapses
+- meals
+- caffeine
+- training
 
-PVT is the main objective alertness measure.
+Do not attempt to describe everything that happened during the day.
 
-### Secondary test: Digit-Symbol Substitution
+## Meals and food
 
-Use a 1–2 minute digital version to measure processing speed.
+Detailed food weighing is intentionally excluded from the core protocol because it creates substantial overhead and can change eating behavior.
 
-### Optional: 2-back
+For a meal, the minimum useful information is simply:
 
-Use a short 1–2 minute test to measure working memory and sustained attention.
+- approximate timestamp
 
-A practical core battery is:
+If it takes only a few extra seconds, optionally add a broad description such as:
 
-1. subjective ratings — ~15 seconds
-2. PVT — 3 minutes
-3. digit-symbol — 2 minutes
+- normal meal
+- large meal
+- carb-heavy meal
+- snack
+- dessert / sugary food
 
-This is short enough to repeat regularly without the testing itself becoming a major burden.
+If a nutrition app is already part of normal routine and writes nutrition data to Health Connect, keep using it. Do not start meticulous calorie or macro tracking solely for this study unless that is genuinely desired independently of the experiment.
+
+The CGM trace can later be used to derive post-meal glucose responses automatically from these timestamps.
+
+## Caffeine
+
+Record caffeine with minimal detail:
+
+- timestamp
+- type or rough quantity only if easy (for example, coffee / energy drink)
+
+Exact milligrams are optional.
+
+The main reason to record caffeine is that it is an important confounder for perceived energy and cognitive performance.
 
 ## Intensive training
 
-Training is treated as a major explanatory variable rather than something to remove from the dataset.
+Training remains part of normal life and should not be modified for the study.
 
-For every intensive session, record:
+Do **not** perform special pre/post measurements.
 
-- training type
-- start time
-- duration
-- session structure when useful: warm-up, technique, pads / bag, intervals, sparring, cooldown
-- overall RPE, 0–10
-- cardiovascular RPE, 0–10
-- muscular RPE, 0–10
-- average heart rate
-- maximum heart rate
-- minutes above 80% of HRmax
-- minutes above 90% of HRmax
+The wearable should automatically capture the workout duration and cardiovascular measurements where possible.
 
-### Session load
+Manually log only:
 
-Calculate:
+- training timestamp / type
+- **cardiovascular fatigue after training**: 1–5
+- **muscular fatigue after training**: 1–5
+- **overall fatigue after training**: 1–5
 
-`session load = duration in minutes × overall RPE`
+Optionally record perceived session intensity (RPE 1–10) if it takes only one additional tap.
 
-Examples:
+There is no need to manually enter average HR, maximum HR, HR zones, or session duration if the wearable already stores them.
 
-- 90 min × RPE 3 = 270 AU
-- 90 min × RPE 8 = 720 AU
-- 30 min × RPE 10 = 300 AU
+The analysis can later derive relationships such as:
 
-The short interval session may be more intense, while the longer hard session may have greater total load.
+`training → glucose pattern → evening energy → sleep → next-day energy / focus`
 
-### Glucose around training
+and:
 
-Record or derive:
+`training intensity → subjective muscular/cardio fatigue → recovery`
 
-- glucose at −60 min
-- glucose immediately before training
-- minimum during training
-- maximum during training
-- glucose immediately after
-- glucose at +30, +60, +120, and +180 min
+## Hydration
 
-Do not assume hard exercise must lower glucose. High-intensity exercise can temporarily raise glucose because counter-regulatory hormones stimulate glucose release from the liver.
+Hydration is **not a core manual metric** in this low-overhead version.
 
-## Hydration and dehydration
+Pre/post-training body-weight measurements, sweat-loss calculations, and urine measurements are removed.
 
-Dehydration should be treated as a training-stress and recovery variable.
+If water intake is already naturally recorded by an app, keep it. Otherwise, do not add detailed hydration logging solely for the experiment.
 
-Measure body mass immediately before and after hard sessions under similar conditions, ideally after using the toilet, with similar or minimal clothing, and after toweling off sweat.
+A simple subjective signal such as unusually thirsty / dehydrated can be added as a Bearable Factor when it is noticeable, but it should not become another mandatory task.
 
-### Percentage body-mass loss
+## Optional objective cognitive measurement
 
-`body mass loss % = (pre-training weight − post-training weight) / pre-training weight × 100`
+### What is PVT?
 
-### Estimated sweat loss
+**PVT means Psychomotor Vigilance Test.** It is a simple reaction-time test: a stimulus appears after an unpredictable delay and the user responds as quickly as possible. Repeated trials provide measures of alertness, reaction speed, variability, and attentional lapses.
 
-Approximately:
+It is useful because performance can deteriorate with sleepiness or fatigue even when subjective ratings do not change much.
 
-`sweat loss (L) = pre-weight − post-weight + fluid consumed − urine produced`
+### Keep it optional and infrequent
 
-For short exercise periods, approximately 1 kg of acute mass loss can be treated as about 1 L of fluid.
+A cognitive test adds much more overhead than passive sensor collection. Therefore it should **not** be performed several times every day in the core protocol.
 
-### Sweat rate
+Suggested options:
 
-`sweat rate = estimated sweat loss / training duration in hours`
+- one brief PVT at roughly the same time once per day, or
+- one brief PVT 3–4 days per week
 
-Record:
+Use the same phone and the same app throughout the study.
 
-- pre-training weight
-- post-training weight
-- body-mass loss %
-- fluid consumed
-- urine during training if applicable
-- estimated sweat loss
-- sweat rate
+If even this becomes annoying, remove PVT completely. Subjective energy and focus are more important to this study's primary goal than maximizing laboratory-style measurement density.
 
-These metrics can later be tested against RPE, post-training fatigue, cognitive performance, heart rate, and next-day HRV.
+## What should be automatic vs manual?
 
-## Post-training recovery
+### Automatic whenever possible
 
-Immediately after training, rate from 0–10:
-
-- overall fatigue
-- mental fatigue
-- muscular fatigue
-
-Approximately two hours later, record:
-
-- energy
-- hunger
-- sleepiness
-
-The next morning, record:
-
-- muscle soreness
-- general fatigue
-- sleep quality
+- CGM glucose
+- steps
+- workout timestamps and duration
+- heart rate
 - resting heart rate
 - HRV
-- subjective energy
-- cognitive battery when scheduled
+- sleep timing and duration
+- weight, if already coming from a connected scale
+- existing nutrition data, if already logged elsewhere
 
-This supports analyses such as:
+### Manual — three times per day
 
-`training load → sleep / recovery → next-day cognitive performance`
+- energy
+- focus
+- sleepiness / mental fatigue
+- stress
 
-## Suggested data structure
+### Manual — only when the event occurs
 
-Use one row per subjective or cognitive measurement rather than one row per day.
+- meal timestamp
+- caffeine timestamp
+- training type / timestamp
+- post-training cardio fatigue
+- post-training muscular fatigue
+- post-training overall fatigue
 
-Suggested columns:
+### Optional
+
+- hunger
+- mood
+- PVT
+- broad meal category
+- RPE
+- alcohol
+- subjective dehydration / unusual thirst
+
+## Expected daily overhead
+
+A realistic target is:
+
+- three subjective check-ins: about 30–60 seconds total
+- meal/caffeine event taps: about 30–60 seconds total
+- training rating on training days: about 10–20 seconds
+- optional PVT: about 3 minutes when performed
+
+Without PVT, manual overhead should usually remain around **1–2 minutes per day**.
+
+## Data to export after the observation period
+
+Rather than constructing a manual spreadsheet every day, export raw data at the end.
+
+Potential sources:
+
+- CGM export
+- wearable / Health Connect data
+- Bearable export
+- optional PVT results
+
+Align the datasets by timestamp during analysis.
+
+A simplified merged dataset could contain:
 
 ```text
 timestamp
 energy
-concentration
+focus
 sleepiness
+stress
 hunger
 mood
-stress
-motivation
 
-pvt_median_rt
-pvt_p90_rt
-pvt_rt_variability
-pvt_lapses
-digit_symbol_score
+glucose
 
-glucose_now
-glucose_15m_ago
-glucose_30m_ago
-glucose_60m_ago
-glucose_slope_30m
+glucose_change_30m
+glucose_change_60m
+glucose_slope
 
-last_meal_time
-minutes_since_meal
-meal_kcal
-meal_carbs
-meal_protein
-meal_fat
-meal_fiber
+meal_event
+meal_category
+caffeine_event
 
-caffeine_last_6h
-steps_last_hour
-exercise_last_6h
-
-sleep_duration
-sleep_quality
+steps
+heart_rate
 resting_hr
 hrv
-body_weight
+sleep_duration
+sleep_start
+sleep_end
 
-experiment_condition
-
+training_event
+training_type
 training_duration
 training_rpe
-training_cardio_rpe
-training_muscular_rpe
-training_load
-training_avg_hr
-training_max_hr
-minutes_above_80pct_hrmax
-minutes_above_90pct_hrmax
+post_training_cardio_fatigue
+post_training_muscular_fatigue
+post_training_overall_fatigue
 
-dehydration_pct
-sweat_loss_l
-sweat_rate_l_per_h
+pvt_median_rt
+pvt_lapses
 ```
+
+Not every row needs every field. The analysis pipeline can combine time-series measurements and event data after collection.
 
 ## Analysis plan
 
-### 1. Visual analysis
+The first analysis should stay descriptive rather than trying to prove causality.
 
-Overlay on synchronized timelines:
+### 1. Build timelines
+
+Overlay:
 
 - glucose
 - meals
 - caffeine
-- activity / training
+- training
 - sleep
-- cognitive-test results
-- subjective energy and sleepiness
+- energy
+- focus
+- sleepiness
 
-### 2. Correlation analysis
+This should reveal obvious repeated patterns before statistical modeling.
 
-Test associations such as:
+### 2. Examine natural associations
 
-- sleep duration vs morning PVT
-- meal carbohydrate vs glucose peak
-- training load vs next-day energy
-- dehydration % vs post-training cognitive performance
-- HRV vs subjective energy
+Examples:
 
-### 3. Lagged analysis
+- sleep duration vs next-day energy
+- HRV vs next-day energy / focus
+- resting HR vs fatigue
+- training vs evening and next-day fatigue
+- meal events vs glucose excursions
+- glucose excursions vs later sleepiness
+- caffeine timing vs energy / sleep
 
-Do not only compare glucose and energy measured at the same instant.
+### 3. Use lagged relationships
 
-Test whether physiological changes precede subjective changes:
+A particularly useful question is not just whether glucose and energy are correlated at the same time, but whether glucose behavior precedes a change in how I feel.
 
-- glucose now → energy +30 min
-- glucose now → energy +60 min
-- glucose now → energy +90 min
-- glucose now → energy +120 min
+For example:
 
-Repeat with:
+- glucose now → energy 30 minutes later
+- glucose now → energy 60 minutes later
+- glucose slope → sleepiness 60–120 minutes later
+- training → energy later that evening
+- sleep → next-morning focus
 
-- glucose change from baseline
-- glucose slope
-- glucose peak
-- glucose iAUC
+### 4. Control obvious confounders
 
-This may reveal, for example, that rapid glucose decline is associated with sleepiness even when absolute glucose concentration is not.
+When enough data are available, regression models can include:
 
-### 4. Regression and confounder control
-
-A simple model might be:
-
-`Energy = β0 + β1·Glucose + β2·Sleep + β3·Caffeine + β4·TimeOfDay + β5·Exercise + error`
-
-Important confounders include:
-
-- sleep duration and quality
-- time since waking
 - time of day
-- time since last meal
-- total meal calories
-- carbohydrate / protein / fat / fiber
+- sleep duration
 - caffeine
-- recent exercise
-- recent steps / activity
-- training load
-- hydration / dehydration
+- meal timing
+- recent training
+- recent activity
 - stress
 
-If glucose peak correlates with sleepiness but the relationship disappears after controlling for meal size, the evidence points more toward the meal as a whole than glucose itself.
+For example:
 
-## Questions this experiment should be able to address
+`Energy = β0 + β1·Glucose + β2·Sleep + β3·Caffeine + β4·TimeOfDay + β5·Training + error`
 
-- Do larger post-meal glucose excursions predict lower cognitive performance later?
-- Is the rate of glucose decline more informative than the glucose peak?
-- Does post-meal walking improve both glucose response and subjective or cognitive outcomes?
-- Does meal order change glucose response, and does that change how I feel?
-- How strongly does previous-night sleep predict glucose response and cognitive performance?
-- Does training load predict next-day fatigue, HRV, or PVT performance?
-- Does dehydration during training independently predict post-training cognitive fatigue?
-- Does pre-training carbohydrate availability predict RPE or late-session fatigue?
-- Do subjective fatigue and objective cognitive performance agree?
+This is still observational evidence and should not be interpreted as proof of causation.
+
+## Questions this study may answer
+
+- What does my normal daily energy pattern look like?
+- What times of day am I normally most and least focused?
+- Does poor sleep predict lower energy or focus the following day?
+- Do some naturally occurring meals produce reproducible glucose patterns?
+- Are larger or faster glucose changes associated with later sleepiness or lower focus?
+- Does caffeine timing explain some apparent glucose/energy relationships?
+- How do intensive training sessions affect evening and next-day energy?
+- Do cardiovascular and muscular fatigue behave differently after training?
+- Does HRV or resting HR correlate with how recovered I feel?
+- Do objective PVT results, when available, agree with subjective energy and focus?
 
 ## Interpretation principles
 
-1. Correlation is not causation.
-2. A smaller glucose spike is not automatically better.
-3. Isolated CGM readings should not be overinterpreted.
-4. Repeated within-person comparisons are more useful than one-off observations.
-5. Consistency of measurement is more important than collecting every possible metric.
-6. Treat training, sleep, meals, hydration, caffeine, and circadian timing as interacting variables.
+1. **Do not change habits to create cleaner data.** Normal life is the object of study.
+2. Correlation is not causation.
+3. A glucose spike is not automatically harmful or responsible for fatigue.
+4. CGM values measure interstitial glucose and should not be treated as perfectly timed blood-glucose measurements.
+5. Passive measurements are preferred to manual ones.
+6. Missing occasional subjective entries are preferable to making the protocol burdensome enough to change behavior or abandon it.
+7. Look for patterns that repeat across many normal days rather than interpreting single events.
 
-## Practical setup
+## Recommended practical setup
 
-The highest-value setup is:
+For Android, the lowest-overhead starting configuration is:
 
-- CGM
-- smartwatch or heart-rate monitor
-- food log
-- sleep tracking
-- daily weight
-- fixed subjective ratings
-- short PVT + Digit-Symbol battery
-- pre/post-training weight and fluid log on hard-training days
+**CGM app + wearable → Health Connect → Bearable for subjective journaling**
 
-This provides a rich dataset without making data collection so burdensome that adherence collapses.
+with CGM data exported separately if it cannot be synchronized into the same ecosystem.
+
+The core manual task is therefore only:
+
+> three quick state check-ins per day + timestamps for meals/caffeine/training + a few fatigue taps after training.
+
+Everything else should be automated where possible.
